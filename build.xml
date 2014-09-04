@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<project name="tareaProgramada1" default="todo">
+<target name="todo" depends="ejecutable,documentacion">
+</target>
+
+<target name="ejecutable" depends="compilar">
+    <jar destfile="../tareaProgramada1/jar/reproductor.jar" includes="../tareaProgramada1/class/**/*.class"/>
+</target>
+
+<target name="compilar">
+    <javac srcdir="." destdir="../tareaProgramada1/class"/>
+</target>
+
+<javac destdir="../tareaProgramada1/libs">  
+  <src path="../tareaProgramada1/libs" />  
+  <classpath>  
+   <fileset dir="../tareaProgramada1/libs">  
+    <include name="**/*.jar" />  
+   </fileset>  
+  </classpath>  
+</javac> 
+
+<target name="documentacion">
+  <javadoc sourcepath="." destdir="../tareaProgramada1/javadoc" packagenames="*"/>
+</target> 
+</project>
